@@ -18,5 +18,5 @@ spec:
               type: ReplacePrefixMatch
               replacePrefixMatch: /
       backendRefs:
-          - name: fitness-tracker-service
-            port: 81
+        - name: fitness-tracker-service
+          port: 81
