@@ -11,12 +11,12 @@ spec:
       - path:
           type: PathPrefix
           value: /
-        filters:
-          - type: URLRewrite
-            urlRewrite:
-              path:
-                type: ReplacePrefixMatch
-                replacePrefixMatch: /
-        backendRefs:
+      filters:
+        - type: URLRewrite
+          urlRewrite:
+            path:
+              type: ReplacePrefixMatch
+              replacePrefixMatch: /
+      backendRefs:
           - name: mongodb-service
             port: 27017
