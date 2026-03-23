@@ -4,7 +4,7 @@ metadata:
   name: fitness-tracker-app
   namespace: chandana-ns
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: fitness-tracker-app
