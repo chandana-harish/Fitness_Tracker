@@ -5,7 +5,7 @@ metadata:
   namespace: chandana-ns
 spec:
   parentRefs:
-    - name: kgateway1
+    - name: kgateway-gw
   rules:
     - matches:
       - path:
@@ -18,5 +18,5 @@ spec:
               type: ReplacePrefixMatch
               replacePrefixMatch: /
       backendRefs:
-          - name: mongodb-service
-            port: 27017
+          - name: fitness-tracker-service
+            port: 81
