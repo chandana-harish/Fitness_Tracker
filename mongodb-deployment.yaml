@@ -37,7 +37,7 @@ spec:
       volumes: #sits outside the container
         - name: chandana-vol 
           emptyDir: 
-            sizeLimit: 512Mi #type of volume
+            sizeLimit: "512Mi" #type of volume
 
         
 
