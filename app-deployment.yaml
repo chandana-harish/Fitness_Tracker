@@ -18,6 +18,11 @@ metadata:
   namespace: chandana-ns
 spec:
   replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate: 
+      maxUnavailable: 0
+      maxSurge: 1
   selector:
     matchLabels:
       app: fitness-tracker-app
@@ -34,6 +39,13 @@ spec:
             - containerPort: 5000
           # ✔ All configMap vars removed
           # ✔ Direct env variables added
+          resources:
+            requests: 
+              memory: "256Mi"
+              cpu: "100m"
+            limits:
+              memory: "512Mi"
+              cpu: "200m"
           env:
             - name: MONGODB_URI
               valueFrom:
