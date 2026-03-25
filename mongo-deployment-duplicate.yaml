@@ -34,7 +34,7 @@ spec:
         volumeMounts:
           - name: chandana-vol #same name as volumes
             mountPath: /data/db
-            name: chandana-vol
+            
 
       volumes: #sits outside the container
         - name: chandana-vol 
