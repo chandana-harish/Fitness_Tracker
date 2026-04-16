@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: duni
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/chandana-harish/Duniversity-College-Portal.git
+    targetRevision: master
+    path: helm-duni
+    helm:
+      values: |
+        userprofile:
+          activeVersion: blue
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: chandana-ns
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
