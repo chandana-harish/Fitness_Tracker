@@ -1,15 +1,16 @@
 apiVersion: apps/v1
-kind: Deployment
+kind:   StatefulSet 
 metadata:
   name: mongodb
   namespace: chandana-ns
 spec:
   replicas: 1
-  strategy:
-    type: RollingUpdate
-    rollingUpdate: 
-      maxUnavailable: 0
-      maxSurge: 1
+  minreadyseconds: 10
+  # strategy:
+  #   type: RollingUpdate
+  #   rollingUpdate: 
+  #     maxUnavailable: 0
+  #     maxSurge: 1
   selector:
     matchLabels:
       app: mongodb
@@ -35,10 +36,20 @@ spec:
           - name: chandana-vol #same name as volumes
             mountPath: /data/db
 
-      volumes: #sits outside the container
-        - name: chandana-vol 
-          emptyDir: 
-            sizeLimit: "512Mi" #type of volume
+      # volumes: #sits outside the container
+      #   - name: chandana-vol 
+      #     emptyDir: 
+      #       sizeLimit: "512Mi" #type of volume 
+  volumeClaimTemplate:
+    metadata:
+      name: chandana-vol
+    spec:
+      accessModes: ["ReadWriteMany"]
+      resources:
+        requests:
+          storage: 2Gi 
+      storageClassName: "fitnessstorage"
+
             
 
         
@@ -56,6 +67,7 @@ spec:
   ports:
   - port: 27017
     targetPort: 27017
-  type: ClusterIP
+  type: ClusterIP 
+  clusterIP: None 
  
  
