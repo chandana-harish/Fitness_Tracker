@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/chandana-harish/Duniversity-College-Portal.git
+    repoURL: https://github.com/chandana-harish/Fitness_Tracker.git
     targetRevision: master
     path: helm-duni
     helm:
