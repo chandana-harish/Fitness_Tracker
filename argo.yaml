@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/chandana-harish/Fitness_Tracker.git
     targetRevision: master
-    path: helm-duni
+    path: helm-fitness
     helm:
       values: |
         userprofile:
