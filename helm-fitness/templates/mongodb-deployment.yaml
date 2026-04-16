@@ -28,11 +28,11 @@ spec:
         - containerPort: 27017
         resources:
           requests: 
-            memory: "128Mi"
-            cpu: "100m"
-          limits:
-            memory: "130Mi"
+            memory: "256Mi"
             cpu: "200m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
         volumeMounts:
           - name: chandana-vol #same name as volumes
             mountPath: /data/db
