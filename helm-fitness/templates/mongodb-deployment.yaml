@@ -19,6 +19,7 @@ spec:
       labels:
         app: mongodb
     spec:
+      terminationGracePeriodSeconds: 10 
       containers:
       - name: mongodb
         image: mongo:7-jammy
@@ -40,7 +41,7 @@ spec:
       #   - name: chandana-vol 
       #     emptyDir: 
       #       sizeLimit: "512Mi" #type of volume 
-  volumeClaimTemplate:
+  volumeClaimTemplates:
     metadata:
       name: chandana-vol
     spec:
