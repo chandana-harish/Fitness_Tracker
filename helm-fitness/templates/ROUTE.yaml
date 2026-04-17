@@ -5,7 +5,7 @@ metadata:
   namespace: chandana-ns
 spec:
   parentRefs:
-    - name: kgateway-gw
+    - name: kgateway-gw1
   rules:
     - matches:
       - path:
