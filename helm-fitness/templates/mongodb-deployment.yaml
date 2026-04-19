@@ -33,23 +33,23 @@ spec:
           limits:
             memory: "512Mi"
             cpu: "500m"
-        volumeMounts:
-          - name: chandana-vol #same name as volumes
-            mountPath: /data/db
+        # volumeMounts:
+        #   - name: chandana-vol #same name as volumes
+        #     mountPath: /data/db
 
       # volumes: #sits outside the container
       #   - name: chandana-vol 
       #     emptyDir: 
       #       sizeLimit: "512Mi" #type of volume 
-  volumeClaimTemplates:
-  - metadata:
-      name: chandana-vol
-    spec:
-      accessModes: ["ReadWriteMany"]
-      resources:
-        requests:
-          storage: 2Gi 
-      storageClassName: "fitnessstorage"
+  # volumeClaimTemplates:
+  # - metadata:
+  #     name: chandana-vol
+  #   spec:
+  #     accessModes: ["ReadWriteMany"]
+  #     resources:
+  #       requests:
+  #         storage: 2Gi 
+  #     storageClassName: "fitnessstorage"
 
             
 
