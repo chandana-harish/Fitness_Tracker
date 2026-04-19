@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: fitness-pv
+spec:
+  capacity:
+    storage: "10Gi"
+  accessModes:
+    - ReadWriteMany
+  nfs:
+    server: 10.0.8.33
+    path: /var/nfs/general/chandana
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: ""
