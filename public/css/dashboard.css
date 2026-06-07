@@ -1,10 +1,10 @@
 /* ===== Dashboard Dark Mode Styles ===== */
-
+   
 /* Dashboard Layout */
 .app-container {
   min-height: 100vh;
   background: var(--dark-bg);
-  color: var(--dark-text-primary);
+  color: var(--dark-text-primary);   
 }
 
 /* Dashboard Page Sections */
