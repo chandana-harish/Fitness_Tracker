@@ -32,7 +32,7 @@ steps:
     command: buildAndPush
     repository: $(imageRepository)
     dockerfile: '**/Dockerfile'
-    containerRegistry: acrconnection   # Azure Container Registry service connection
+    containerRegistry: 'acrconnection'   # Azure Container Registry service connection
     tags: |
       $(imageTag)
       latest
@@ -42,7 +42,7 @@ steps:
   displayName: Deploy to AKS
   inputs:
     action: deploy
-    kubernetesServiceConnection: aksconnection   # AKS service connection name
+    kubernetesServiceConnection: 'aksconnection'  # AKS service connection name
     namespace: default
     manifests: |
       Fitness_Chart/templates/app-deployment.yml
