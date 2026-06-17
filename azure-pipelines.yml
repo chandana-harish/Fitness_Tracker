@@ -45,8 +45,8 @@ steps:
     namespace: default
     manifests: |
       Fitness_Chart/templates/app-deployment.yml // add your deployment file name with file location
-      k8s/configmap.yml //     add your deployment file name with file location
-      k8s/mongodb-deployment.yaml // add your deployment file name with file location
+      
+      Fitness_Chart/templates/mongodb-deployment.yaml // add your deployment file name with file location
     containers: |
       fitnesschandana.azurecr.io/$(imageRepository):$(imageTag)    //here add your azure conatiner registry login servername
  
